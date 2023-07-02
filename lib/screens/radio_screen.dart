@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/button_widget.dart';
@@ -18,13 +19,13 @@ class RadioScreen extends StatefulWidget {
 class _RadioScreenState extends State<RadioScreen> {
   ScrollController controller = PageController();
   List icons = [FontAwesomeIcons.pause, FontAwesomeIcons.play];
-  final url = "https://www.radioking.com/play/radio-generation-1";
+  final url = dotenv.env['BASE_URL'];
   AudioPlayer audioPlayer = AudioPlayer();
   bool _isPlaying = false;
 
   playRadio() async {
     try {
-      await audioPlayer.play(UrlSource(url));
+      await audioPlayer.play(UrlSource(url as String));
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(

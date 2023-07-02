@@ -38,6 +38,7 @@ dependencies:
   font_awesome_flutter: ^10.5.0
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.0.0
+  flutter_dotenv: ^5.0.2
   google_fonts: ^4.0.0
   audioplayers: ^4.1.0
   lottie: ^2.4.0
@@ -69,6 +70,7 @@ flutter:
     - assets/lottieFiles/
     - assets/images/
     - assets/icons/
+    - assets/config/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
